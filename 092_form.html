@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+    <script>
+        function mailValidation(){
+            email=document.getElementById("mailFld").value;
+
+            var pattern= /^[\w#\.-]{2,25}@[a-z]{3,10}.[a-z]{2,3}$/
+            if(pattern.test(email)==false){
+                document.getElementById("mailSpan").innerHTML="Invalid Email id";
+                document.getElementById("mailFld").value="";
+                document.getElementById("mailFld").focus();
+            }
+            else
+            document.getElementById("mailSpan").innerHTML="";
+
+            var gender= document.m1.gender.value;
+            if(gender==""){
+                document.getElementById("genderSpan").innerHTML="Please Select Gender"
+            }
+            else
+            document.getElementById("genderSpan").innerHTML="";
+        }
+    </script>
+</head>
+<body>
+    <form name="m1">
+        Enter Email id <br/>
+        <input style="border-color: lightgreen;" type="text"name="email"id="mailFld"/>
+        <span style="color: red;" id="mailSpan"></span>
+
+        <br/>
+        Select Gender <br/>
+        <input type="radio"name="gender"value="M"/>Male
+        <input type="radio"name="gender"value="F"/>Female
+        <span style="color: red;" id="genderSpan"></span>
+
+        <br/><br/>
+        <input style="background-color: lightgreen;" type="button"value="Login"onclick="mailValidation()"/>
+
+    </form>
+</body>
+</html>
